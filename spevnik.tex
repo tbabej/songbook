@@ -27,17 +27,19 @@
 % Header parts
 \newcommand{\song}[1] {\mbox{\Large\textsf{#1}}}
 \newcommand{\autor}[1] {\mbox{\large\textsf{#1}}}
-\newcommand{\youtube}[1] {\href{#1}{\raisebox{-2pt}{\includegraphics[width=0.025\textwidth]{images/youtube_icon.jpg}}}\vspace{2pt}}
-\newcommand{\tutorial}[1] {\href{#1}{\raisebox{-5pt}{\includegraphics[width=0.025\textwidth]{images/dark.png}}}\vspace{5pt}}
+\newcommand{\youtube}[1] {\href{#1}{\raisebox{-2pt}{\includegraphics[width=0.025\textwidth]{images/youtube_icon.jpg}}}}
+\newcommand{\tutorial}[1] {\href{#1}{\raisebox{-5pt}{\includegraphics[width=0.025\textwidth]{images/dark.png}}}}
 \newcommand{\capo}[1] {\fbox{\footnotesize{\textsc{\textbf{Capo #1}}}}}
 \newcommand{\shiftright}{\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil}
 
 % Displays each part of the header only if it is defined
 \newcommand{\makeheader}{%
 \ifdefstring{\SongVar}{}{}{\song{\SongVar}}%
+\ifdefstring{\YoutubeVar}{}{\ifdefstring{\TutorialVar}{}{}{\vspace{-4pt}}}{\ifdefstring{\TutorialVar}{}{\vspace{-2pt}}{\vspace{-5pt}}}\hspace{0.1pt}%
 \ifdefstring{\TutorialVar}{}{}{\tutorial{\TutorialVar}}%
 \shiftright%
 \ifdefstring{\YoutubeVar}{}{}{\youtube{\YoutubeVar}}
+\ifdefstring{\YoutubeVar}{}{\ifdefstring{\TutorialVar}{}{}{\vspace{-1pt}}}{\ifdefstring{\TutorialVar}{}{\vspace{0pt}}{\vspace{-2pt}}}%
 
 \ifdefstring{\AuthorVar}{}{}{\autor{\AuthorVar}}%
 \shiftright%
@@ -105,6 +107,7 @@
 \input{songs/All_I_Want_Is_You(2).tex}
 \input{songs/Liar(2).tex}
 \input{songs/Green_Eyes(1).tex}
+\input{songs/All_I_Want(1).tex}
 %
 \end{guitar}
 \end{multicols*}
