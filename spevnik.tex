@@ -1,0 +1,109 @@
+\documentclass{article}
+
+\usepackage[top=40pt,left=10pt,bottom=40pt,right=10pt,margin=20pt,landscape,a4paper]{geometry}
+\usepackage{multicol}                       % multiple column support
+\usepackage{guitar}                         % chords above the words
+\usepackage{gchords}                        % chord diagrams
+\usepackage{verbatim}                       % support for comment and verbatim
+\usepackage{graphicx}                       % support for images
+\usepackage[hidelinks]{hyperref}            % hyperlink support
+\usepackage{etoolbox}                         % conditional statement support
+
+% Set variable commands
+\newcommand{\SongVar}{}
+\newcommand{\AuthorVar}{}
+\newcommand{\YoutubeVar}{}
+\newcommand{\CapoVar}{}
+\newcommand{\TutorialVar}{}
+
+\newcommand{\Song}[1]{\renewcommand{\SongVar}{#1}}
+\newcommand{\Author}[1]{\renewcommand{\AuthorVar}{#1}}
+\newcommand{\Youtube}[1]{\renewcommand{\YoutubeVar}{#1}}
+\newcommand{\Capo}[1]{\renewcommand{\CapoVar}{#1}}
+\newcommand{\Tutorial}[1]{\renewcommand{\TutorialVar}{#1}}
+
+\newcommand{\resetVars}{\Song{}\Author{}\Youtube{}\Capo{}\Tutorial{}}
+
+% Header parts
+\newcommand{\song}[1] {\mbox{\Large\textsf{#1}}}
+\newcommand{\autor}[1] {\mbox{\large\textsf{#1}}}
+\newcommand{\youtube}[1] {\href{#1}{\raisebox{-2pt}{\includegraphics[width=0.025\textwidth]{images/youtube_icon.jpg}}}}
+\newcommand{\tutorial}[1] {\href{#1}{\raisebox{-5pt}{\includegraphics[width=0.025\textwidth]{images/dark.png}}}}
+\newcommand{\capo}[1] {\fbox{\footnotesize{\textsc{\textbf{Capo #1}}}}}
+\newcommand{\shiftright}{\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil}
+
+% Displays each part of the header only if it is defined
+\newcommand{\makeheader}{%
+\ifdefstring{\SongVar}{}{}{\song{\SongVar}}%
+\ifdefstring{\TutorialVar}{}{}{\tutorial{\TutorialVar}}%
+\shiftright%
+\ifdefstring{\YoutubeVar}{}{}{\youtube{\YoutubeVar}}
+
+\ifdefstring{\AuthorVar}{}{}{\autor{\AuthorVar}}%
+\shiftright%
+\ifdefstring{\CapoVar}{}{}{\capo{\CapoVar}}%
+}
+
+% Other commands
+\newcommand{\C}[2] {\textbf{\guitarChord{#1}{\textnormal{#2}}}}
+\newcommand{\lyrics}{\flushleft\normalsize}
+\newcommand{\tab}{\small}
+\newcommand{\continue}{\vfil\columnbreak \hfil \vspace{11mm}}
+\newcommand{\continuechords}{\vfil\columnbreak \hfil \vspace{9.5mm}}
+\newcommand{\next}{\vfil\columnbreak }
+
+% Chord diagrams
+\newcommand{\Asusfour}{\chord{t}{x,o,p2,p2,p3,o}{Asus4}}
+\newcommand{\Dsustwo}{\chord{t}{x,x,o,p2,p3,o}{Dsus2}}
+\newcommand{\Esusfour}{\chord{t}{o,p2,p2,p2,o,o}{Esus4}}
+\newcommand{\Aseven}{\chord{t}{x,o,p2,o,p2,o}{A7}}
+\newcommand{\Bmseven}{\chord{t}{x,p2,o,p2,o,p2}{Bm7}}
+\newcommand{\Gseven}{\chord{t}{p3,p2,o,o,o,p1}{G7}}
+\newcommand{\Gfive}{\chord{t}{p3,p5,p5,x,x,x}{G5}}
+\newcommand{\CaddG}{\chord{t}{x,p3,p2,o,p1,p3}{CaddG}}
+\newcommand{\Gmajseven}{\chord{t}{x,x,o,o,p3,p2}{Gmaj7}}
+\newcommand{\Emajnine}{\chord{t}{x,p2,p2,p4,p4,p2}{Emaj9}}
+\newcommand{\Emsix}{\chord{t}{o,p2,p2,x,p2,x}{Em6}}
+\newcommand{\EmslashD}{\chord{t}{x,x,o,o,o,o}{Em/D}}
+\newcommand{\EmslashDsharp}{\chord{t}{x,x,p1,o,o,o}{Em/D\#}}
+\newcommand{\Dmsix}{\chord{t}{x,x,o,p2,o,p1}{Dm6}}
+\newcommand{\GslashB}{\chord{t}{x,p2,x,o,p3,p3}{G/B}}
+\newcommand{\Eflat}{\chord{6t}{x,o,p2,p2,p2,o}{E\guitarFlat}}
+\newcommand{\Cnine}{\chord{t}{x,p3,p2,o,p3,p3}{Cadd9}}
+
+\begin{document}%
+\begin{multicols*}{4}%
+\begin{guitar}%
+% Page 1
+\input{songs/Flightless_Bird(2).tex}
+\input{songs/Love_Vigilantes(1).tex}
+\vfill
+\columnbreak
+% Page 1
+\input{songs/The_Trapeze_Swinger(4).tex}
+% Page 1
+\input{songs/Yellow(2).tex}
+\input{songs/Scientist(2).tex}
+% Page 1
+\input{songs/Strawberry_Swing(2).tex}
+\input{songs/42(2).tex}
+% Page 1
+\input{songs/With_or_without_you(2).tex}
+\input{songs/One(2).tex}
+\vfil\columnbreak
+\input{songs/Robot_Pirates(2).tex}
+\input{songs/Listen_To_Your_Heart(2).tex}
+\input{songs/Trouble(1).tex}
+\input{songs/Don't_Panic(1).tex}
+\input{songs/If_A_Song_Could_Get_Me_You(2).tex}
+\input{songs/Swallowed_In_The_Sea(2).tex}
+\input{songs/Blower's_Daughter(2).tex}
+\input{songs/Message(1).tex}
+\input{songs/Hey_there_Delilah(2).tex}
+\input{songs/Sleep(1).tex}
+\input{songs/All_I_Want_Is_You(2).tex}
+\input{songs/Liar(1).tex}
+%
+\end{guitar}
+\end{multicols*}
+\end{document}
