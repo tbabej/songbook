@@ -27,8 +27,8 @@
 % Header parts
 \newcommand{\song}[1] {\mbox{\Large\textsf{#1}}}
 \newcommand{\autor}[1] {\mbox{\large\textsf{#1}}}
-\newcommand{\youtube}[1] {\href{#1}{\raisebox{-2pt}{\includegraphics[width=0.025\textwidth]{images/youtube_icon.jpg}}}}
-\newcommand{\tutorial}[1] {\href{#1}{\raisebox{-5pt}{\includegraphics[width=0.025\textwidth]{images/dark.png}}}}
+\newcommand{\youtube}[1] {\href{#1}{\raisebox{-2pt}{\includegraphics[width=0.025\textwidth]{images/youtube_icon.jpg}}}\vspace{2pt}}
+\newcommand{\tutorial}[1] {\href{#1}{\raisebox{-5pt}{\includegraphics[width=0.025\textwidth]{images/dark.png}}}\vspace{5pt}}
 \newcommand{\capo}[1] {\fbox{\footnotesize{\textsc{\textbf{Capo #1}}}}}
 \newcommand{\shiftright}{\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil}
 
@@ -48,8 +48,8 @@
 \newcommand{\C}[2] {\textbf{\guitarChord{#1}{\textnormal{#2}}}}
 \newcommand{\lyrics}{\flushleft\normalsize}
 \newcommand{\tab}{\small}
-\newcommand{\continue}{\vfil\columnbreak \hfil \vspace{11mm}}
-\newcommand{\continuechords}{\vfil\columnbreak \hfil \vspace{9mm}}
+\newcommand{\continue}{\vfil\columnbreak \hfil \vspace{9mm}}
+\newcommand{\continuechords}{\vfil\columnbreak \hfil \vspace{7mm}}
 \newcommand{\next}{\vfil\columnbreak }
 
 % Chord diagrams
@@ -74,6 +74,7 @@
 \begin{document}%
 \begin{multicols*}{4}%
 \begin{guitar}%
+\hfuzz=10000pt %supress overflow warnings
 % Page 1
 \input{songs/Flightless_Bird(2).tex}
 \input{songs/Love_Vigilantes(1).tex}
