@@ -7,7 +7,7 @@
 \usepackage{verbatim}                       % support for comment and verbatim
 \usepackage{graphicx}                       % support for images
 \usepackage[hidelinks]{hyperref}            % hyperlink support
-\usepackage{etoolbox}                         % conditional statement support
+\usepackage{etoolbox}                       % conditional statement support
 
 % Set variable commands
 \newcommand{\SongVar}{}
@@ -33,7 +33,7 @@
 \newcommand{\shiftright}{\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil\hfil}
 
 % Displays each part of the header only if it is defined
-\newcommand{\makeheader}{%
+\newcommand{\MakeHeader}{%
 \ifdefstring{\SongVar}{}{}{\song{\SongVar}}%
 \ifdefstring{\YoutubeVar}{}{\ifdefstring{\TutorialVar}{}{}{\vspace{-4pt}}}{\ifdefstring{\TutorialVar}{}{\vspace{-2pt}}{\vspace{-5pt}}}\hspace{0.1pt}%
 \ifdefstring{\TutorialVar}{}{}{\tutorial{\TutorialVar}}%
@@ -48,11 +48,11 @@
 
 % Other commands
 \newcommand{\C}[2] {\textbf{\guitarChord{#1}{\textnormal{#2}}}}
-\newcommand{\lyrics}{\flushleft\normalsize}
-\newcommand{\tab}{\small}
-\newcommand{\continue}{\vfil\columnbreak \hfil \vspace{9mm}}
-\newcommand{\continuechords}{\vfil\columnbreak \hfil \vspace{7mm}}
-\newcommand{\next}{\vfil\columnbreak }
+\newcommand{\Lyrics}{\flushleft\normalsize}
+\newcommand{\Tab}{\small}
+\newcommand{\Continue}{\vfil\columnbreak \hfil \vspace{9mm}}
+\newcommand{\Continuechords}{\vfil\columnbreak \hfil \vspace{7mm}}
+\newcommand{\Next}{\vfil\columnbreak }
 
 % Chord diagrams
 \newcommand{\Asusfour}{\chord{t}{x,o,p2,p2,p3,o}{Asus4}}
