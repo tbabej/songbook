@@ -8,6 +8,7 @@
 \usepackage{graphicx}                       % support for images
 \usepackage[hidelinks]{hyperref}            % hyperlink support
 \usepackage{etoolbox}                       % conditional statement support
+\usepackage{tikz}
 
 % Set variable commands
 \newcommand{\SongVar}{}
@@ -72,6 +73,36 @@
 \newcommand{\GslashB}{\chord{t}{x,p2,x,o,p3,p3}{G/B}}
 \newcommand{\Eflat}{\chord{6t}{x,o,p2,p2,p2,o}{E\guitarFlat}}
 \newcommand{\Cnine}{\chord{t}{x,p3,p2,o,p3,p3}{Cadd9}}
+
+% Chord strumming pattern
+\newcounter{x}
+
+\newcommand{\StrummingStart}{\setcounter{x}{0}\begin{center}\hspace{-0.7cm}\begin{tikzpicture}[scale=0.05]}
+
+\newcommand{\StrummingEnd}{
+\addtocounter{x}{-8};
+\draw [very thick] (-2,15) -- (\value{x},15);
+\draw [very thick] (-2,-2) -- (\value{x},-2);
+\end{tikzpicture}\end{center}}
+
+\newcommand{\Up}[1][up]{
+\draw [thick, ->] (\value{x},0) -- (\value{x},13);
+\node [above] at (\value{x},14){#1};
+\addtocounter{x}{10};}
+
+\newcommand{\Down}[1][down]{\draw [thick, ->] (\value{x},13) -- (\value{x},0);
+\node [below] at (\value{x},-1){#1};
+\addtocounter{x}{10};}
+
+\newcommand{\UpMiss}{
+\draw [dashed, thick, ->] (\value{x},0) -- (\value{x},13);
+\addtocounter{x}{10};}
+
+\newcommand{\DownMiss}{\draw [dashed, thick, ->] (\value{x},13) -- (\value{x},0);
+\addtocounter{x}{10};}
+
+\newcommand{\Time}[2]{\node [above] at (-5,10){#1};
+\node at (-5,9){#2};}
 
 \begin{document}%
 \begin{multicols*}{4}%
