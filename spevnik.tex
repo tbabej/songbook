@@ -101,6 +101,25 @@
 \newcommand{\DownMiss}{\draw [dashed, thick, ->] (\value{x},13) -- (\value{x},0);
 \addtocounter{x}{10};}
 
+\newcommand{\UpHalf}[1][up]{
+\draw [thick, ->] (\value{x},6) -- (\value{x},13);
+\node [above] at (\value{x},14){#1};
+\addtocounter{x}{10};}
+
+\newcommand{\DownHalf}[1][down]{\draw [thick, ->] (\value{x},6) -- (\value{x},0);
+\node [below] at (\value{x},-1){#1};
+\addtocounter{x}{10};}
+
+\newcommand{\UpStress}[1][up]{
+\draw [ultra thick, ->] (\value{x},0) -- (\value{x},13);
+\node [above] at (\value{x},14){\textbf{#1}};
+\addtocounter{x}{10};}
+
+\newcommand{\DownStress}[1][down]{\draw [ultra thick, ->] (\value{x},13) -- (\value{x},0);
+\node [below] at (\value{x},-1){\textbf{#1}};
+\addtocounter{x}{10};}
+
+
 \newcommand{\Time}[2]{\node [above] at (-5,10){#1};
 \node at (-5,9){#2};}
 
