@@ -51,9 +51,9 @@
 \newcommand{\C}[2] {\textbf{\guitarChord{#1}{\textnormal{#2}}}}
 \newcommand{\Lyrics}{\flushleft\normalsize}
 \newcommand{\Tab}{\small}
-\newcommand{\Continue}{\vfil\columnbreak \hfil \vspace{9mm}}
-\newcommand{\Continuechords}{\vfil\columnbreak \hfil \vspace{7mm}}
-\newcommand{\Next}{\vfil\columnbreak }
+\newcommand{\Continue}{\par \columnbreak ~\\ \vspace{24.5pt}}
+\newcommand{\Continuechords}{\par \columnbreak ~\\ \vspace{18pt}}
+\newcommand{\Next}{\par \columnbreak}
 
 % Chord diagrams
 \newcommand{\Asusfour}{\chord{t}{x,o,p2,p2,p3,o}{Asus4}}
@@ -127,6 +127,7 @@
 \begin{multicols*}{4}%
 \begin{guitar}%
 \hfuzz=10000pt %supress overflow warnings
+\raggedcolumns
 % Page 1
 \input{songs/Flightless_Bird(2).tex}
 \input{songs/Love_Vigilantes(1).tex}
